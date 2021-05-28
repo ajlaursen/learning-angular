@@ -12,6 +12,7 @@ import { CoursesService } from './courses.service';
         <td [attr.colSpan]="colSpan">
       </tr>
     </table>
+    <button class="btn btn-primary" [class.active]="isActive" >Save</button>
   `,
 })
 export class CoursesComponent {
@@ -19,6 +20,7 @@ export class CoursesComponent {
   courses;
   imageUrl = "https://via.placeholder.com/150"
   colSpan = 2
+  isActive = true
 
   
   constructor(service: CoursesService){
