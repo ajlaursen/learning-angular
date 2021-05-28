@@ -6,16 +6,20 @@ import { CoursesService } from './courses.service';
   selector: 'courses',
   template: `
     <h2>{{ title }}</h2>
-    <ul>
-      <li *ngFor="let course of courses">
-        {{ course }}
-      </li>
-    </ul>
+    <img [src]="imageUrl"/>
+    <table>
+     <tr>
+        <td [attr.colSpan]="colSpan">
+      </tr>
+    </table>
   `,
 })
 export class CoursesComponent {
   title = 'List of courses';
   courses;
+  imageUrl = "https://via.placeholder.com/150"
+  colSpan = 2
+
   
   constructor(service: CoursesService){
     
