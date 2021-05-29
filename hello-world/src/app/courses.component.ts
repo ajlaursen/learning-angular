@@ -12,7 +12,7 @@ import { CoursesService } from './courses.service';
         <td [attr.colSpan]="colSpan">
       </tr>
     </table>
-    <button class="btn btn-primary" [class.active]="isActive" >Save</button>
+    <button class="btn btn-primary" [class.active]="isActive" (click)="onSave($event)" >Save</button>
   `,
 })
 export class CoursesComponent {
@@ -21,7 +21,9 @@ export class CoursesComponent {
   imageUrl = "https://via.placeholder.com/150"
   colSpan = 2
   isActive = true
-
+  onSave($event: Event) {
+    console.log("button was clicked", $event)
+  }
   
   constructor(service: CoursesService){
     
