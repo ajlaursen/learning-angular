@@ -20,7 +20,7 @@ import { CoursesService } from './courses.service';
       Save
     </button>
 
-    <input (keyup.enter)="onKeyUp($event)"/>
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>
   `,
 })
 export class CoursesComponent {
@@ -29,12 +29,15 @@ export class CoursesComponent {
   imageUrl = 'https://via.placeholder.com/150';
   colSpan = 2;
   isActive = true;
+
+  email = "me@example.com";
+
   onSave($event: Event) {
     $event.stopPropagation();
     console.log('button was clicked', $event);
   }
-  onKeyUp($event: Event){
-    console.log("Enter was pressed")
+  onKeyUp(){
+    console.log(this.email)
   }
   constructor(service: CoursesService) {
     this.courses = service.getCourses();
